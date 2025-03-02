@@ -1,0 +1,24 @@
+def find_highest_number():
+    print("Enter integers to find the highest number. Type 'done' to finish.")
+
+    highest = None  
+    while True:
+        user_input = input("Enter a number (or 'done' to finish): ")
+
+        if user_input.lower() == 'done':           
+  break
+
+        try:
+            number = int(user_input) 
+            if highest is None or number > highest:  
+                highest = number
+        except ValueError:
+            print("Invalid input. Please enter an integer or 'done'.")
+
+    if highest is None:
+        print("No numbers were entered.")
+    else:
+        print(f"The highest number entered is: {highest}")
+
+find_highest_number()
+
